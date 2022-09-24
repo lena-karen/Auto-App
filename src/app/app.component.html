@@ -1,0 +1,92 @@
+<body>
+  <header class="header">
+      <div class="container flex-container">
+          <a href="index.html" class="logo">
+              <img src="../assets/images/logo.png" alt="" class="logo-img">
+          </a>
+          <nav class="menu">
+              <ul class="menu-list">
+                  <li class="menu-item">
+                      <a href="index.html" class="menu-link" id = "main-link">Главная</a>
+                  </li>
+                  <li class="menu-item">
+                      <a href="#catalog" class="menu-link" id = "catalog-link">Автомобили</a>
+                  </li>
+                  <li class="menu-item">
+                      <a href="#order" class="menu-link" id = "order-link">Бронирование авто</a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+
+  <section class="main" [ngStyle] = "bgPos">
+      <div class="container">
+          <div class="main-info">
+              <h1 class="main-info-title">Аренда премиальных автомобилей</h1>
+              <p class="main-info-text">В нашем клубе имеется солидная коллекция 
+                  спортивных автомобилей — от достаточно распространенных серийных 
+                  машин до настоящего гоночного эксклюзива. Воспользуйтесь уникальной 
+                  возможностью побывать за рулем настоящей легенды и узнать, на что она 
+                  способна за пределами гоночной трассы!
+              </p>
+              <button class="btn" id = "show-autos" (click) = "goScroll(catalog)">Посмотреть автомобили</button>
+          </div>
+      </div>
+  </section>
+
+  <section class="catalog" id = "catalog" #catalog>
+      <div class="container">
+          <h2 class="title catalog-title">Наш автопарк</h2>
+          <div class="catalog-block">
+              <div class="catalog-item" *ngFor = "let auto of autosData">
+                  <img src="../assets/images/{{auto.image}}" alt="image" class="item-img">
+                  <p class="item-title">{{auto.name}}</p>
+                  <div class="item-info">
+                      <div class="item-info-point">
+                          <img src="../assets/images/transmission.png" alt="gear" class="item-info-point-img">
+                          <p class="item-info-point-text">Коробка</p>
+                          <p class="item-info-point-text">{{auto.gear}}</p>
+                      </div>
+                      <div class="item-info-point">
+                          <img src="../assets/images/engine.png" alt="engine" class="item-info-point-img">
+                          <p class="item-info-point-text">Двигатель</p>
+                          <p class="item-info-point-text">{{auto.engine}} л.с.</p>
+                      </div>
+                      <div class="item-info-point">
+                          <img src="../assets/images/year.png" alt="belt" class="item-info-point-img">
+                          <p class="item-info-point-text">Год выпуска</p>
+                          <p class="item-info-point-text">{{auto.year}}</p>
+                      </div>
+                  </div>
+                  <button class="btn catalog-btn" (click) = "goScroll(order, auto)">Забронировать</button>
+              </div>
+             
+          </div>
+      </div>
+  </section>
+  <section class="order" id = "order" #order>
+      <div class="container">
+          <h2 class="title order-title">Узнать цену и забронировать</h2>
+          <p class = "order-text">
+              Заполните данные, и мы перезвоним вам для уточнения всех деталей бронирования
+          </p>
+          <form action = "" class = "order-block" [formGroup] = "priceForm">
+                  <input type="text" class="order-input" id = "name" placeholder="Ваше имя" formControlName = "name">
+                  <input type="phone" class="order-input" id = "phone" placeholder="Ваш телефон" formControlName = "phone">
+                  <input type="text" class="order-input" id = "auto" placeholder="Автомобиль, который Вас интересует" formControlName = "auto">
+                  <button class="btn order-btn" type="button" (click) = "onSubmit()" [disabled] = "!priceForm.valid">Узнать цену</button>
+          </form>
+          <img src="../assets/images/order-bg.png" alt = "order" class = "order-img" [ngStyle] = "trans">
+      </div>
+  </section>
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-block">
+              <a href="index.html" class="logo">
+                  <img src="../assets/images/logo.png" alt="" class="logo-img">
+              </a>
+              <p class="footer-rights">Все права защищены</p>
+          </div>
+      </div>
+  </footer>

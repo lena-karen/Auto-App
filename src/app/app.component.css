@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: Roboto;
+    src: url("../assets/fonts/Roboto.ttf");
+}
+@font-face {
+    font-family: Roboto;
+    src: url("../assets/fonts/Robotobold.ttf");
+    font-weight: bold;
+}
+body {
+    font-family: Roboto, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.header {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 25px 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    margin-left: 244px;
+}
+.menu-list {
+    display: flex;
+
+}
+
+.menu-item {
+    margin-right: 115px;
+}
+
+.menu-link {
+    font-size: 15px;
+    color: #030305;
+}
+
+.menu-link:hover {
+    border-bottom: 2px solid #000;
+}
+
+.main {
+    background-image: url('../assets/images/first-section-background.png');
+    background-position: center;
+    background-size: cover;
+    padding-top: 104px;
+    padding-bottom: 154px;
+}
+.main-info {
+    max-width: 850px;
+}
+.main-info-title {
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 110%;
+    color: #030305;
+    margin-bottom: 40px;
+}
+.main-info-text {
+    font-size: 16px;
+    line-height: 130%;
+    color: #030305;
+    margin-bottom: 40px;
+    max-width: 502px;
+}
+
+.btn {
+    padding: 20px;
+    width: 334px;
+    height: 64px;
+    background-color: #030305;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: background-color .5s;
+}
+
+.btn:hover:not(:disabled){
+    cursor: pointer;
+    background-color: #575757;
+   /* grid-column-gap: 24px;
+    grid-row-gap: 40px;*/
+}
+.btn:disabled {
+    cursor:not-allowed;
+    color: grey;
+    background-color: #343434;
+}
+.catalog {
+    margin-top: 100px;
+}
+.title {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 70px;
+    color: #030305;
+}
+.catalog-title {
+    margin-bottom: 40px;
+}
+.item-title {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #030305;
+    margin: 15px 0 19px;
+}
+.item-info-point > p:nth-child(2) {
+    font-weight: bold;
+}
+.catalog-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 40px;
+}
+.catalog-item {
+    max-width: 384px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.catalog-btn {
+    width: 100%;
+    padding: 15px;
+    height: 54px;
+}
+.item-info {
+    display: flex;
+}
+.item-img {
+    vertical-align: bottom;
+    transition: all .3s;
+}
+.item-img:hover {
+    transform: scale(1.1);
+}
+.item-info-point-img {
+    margin-bottom: 11px;
+}
+.item-info-point {
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.order {
+    margin-top: 100px;
+    overflow: hidden;
+}
+.order .container {
+    position: relative;
+    padding-bottom: 121px;
+}
+.order-img {
+    position: absolute;
+    left: 401px;
+    bottom: 0;
+}
+.order-block {
+    display: flex;
+    flex-direction: column;
+    max-width: 344px;
+}
+.order-title {
+    margin-bottom: 20px;
+}
+.order-text {
+    font-weight: 400;
+    font-size: 16px;
+    color: #5D5D5F;
+    margin-bottom: 60px;
+}
+.order-input {
+    height: 65px;
+    background: #FFFFFF;
+    border: 1px solid #5D5D5F;
+    padding: 22px 0 22px 18px;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 15px;
+    outline: none;
+}
+.order-input::placeholder {
+    color: #5D5D5F;
+}
+.order-btn {
+    width: 344px;
+}
+.footer-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    border-top: 1px solid #E5E5E5;
+    height: 90px;
+}
+.footer-rights {
+    font-size: 15px;
+    color: #030305;
+}
+
+.order-input.ng-touched.ng-valid {
+    border: 1px solid #5D5D5F;
+}
+.order-input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
